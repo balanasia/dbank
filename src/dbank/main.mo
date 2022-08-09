@@ -24,7 +24,12 @@ actor DBank {
 
   //allows to top down the currentValue
   public func topDown(amount: Nat) {
-    currentValue -= amount;
-    Debug.print(debug_show(currentValue));
+    let temp: Int = currentValue - amount;
+    if(temp >=0){
+      currentValue -= amount;
+      Debug.print(debug_show(currentValue));
+    } else {
+      Debug.print("Amount too large, current value is less than zero");
+    }
   }
 }
