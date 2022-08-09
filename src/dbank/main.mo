@@ -3,10 +3,10 @@ import Debug "mo:base/Debug";
 
 //create a class that will hold canister
 actor DBank {
-  //store current value
-  var currentValue = 300;
+  //orthogonally persistent variable
+  stable var currentValue = 300;
   //assign new value to the variable
-  currentValue := 100;
+  //currentValue := 100;
 
   //constant
   let id = 4735238402;
