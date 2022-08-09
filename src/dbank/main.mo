@@ -13,4 +13,18 @@ actor DBank {
 
   //print to console
   Debug.print(debug_show(id));
+
+  //create new function
+  //make function public
+  //input Natural number as amount input
+  public func topUp(amount: Nat) {
+    currentValue += amount;
+    Debug.print(debug_show(currentValue));
+  };
+
+  //allows to top down the currentValue
+  public func topDown(amount: Nat) {
+    currentValue -= amount;
+    Debug.print(debug_show(currentValue));
+  }
 }
