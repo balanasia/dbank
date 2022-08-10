@@ -6,7 +6,7 @@ import Float "mo:base/Float";
 //create a class that will hold canister
 actor DBank {
   //orthogonally persistent variable
-  stable var currentValue: Float = 300;
+ var currentValue: Float = 300;
 
   stable var startTime = Time.now();
   //startTime := Time.now();
@@ -21,7 +21,7 @@ actor DBank {
   };
 
   //allows to top down the currentValue
-  public func topDown(amount: Float) {
+  public func withdraw(amount: Float) {
     let temp: Float = currentValue - amount;
     if(temp >=0){
       currentValue -= amount;
@@ -31,7 +31,7 @@ actor DBank {
     }
   };
 
-  //create new query function
+  //create new query -=function
   //with async Nat return value
   public query func checkBalance(): async Float{
     return currentValue;
