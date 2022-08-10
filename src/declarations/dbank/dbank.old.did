@@ -1,4 +1,6 @@
 service : {
+  checkBalance: () -> (nat) query;
+  compound: () -> () oneway;
   topDown: (nat) -> () oneway;
   topUp: (nat) -> () oneway;
 }
